@@ -13,10 +13,14 @@ function TodoApp() {
 
   useEffect(() => {
     (async () => {
-      const info = await fetch(
+      const todos = await fetch(
         "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw"
       ).then(data => data.json());
-      setTodos(info);
+      const todosWithCompleted = todos.map(todo => {
+        todo.completed = false;
+        return todo;
+      })
+      setTodos(todosWithCompleted);
     })();
   }, []);
 
@@ -67,6 +71,7 @@ function TodoApp() {
               id={todo.id}
               description={todo.description}
               deadline={todo.deadline}
+              completed={todo.completed}
               editTodo={editTodo}
               removeTodo={removeTodo}
               toggleTodo={toggleTodo}

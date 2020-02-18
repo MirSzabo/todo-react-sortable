@@ -36,7 +36,7 @@ function Todo({
   
     const editFormHide = () => {
       return (
-      <div>
+      <span>
         {description} {deadline}
         <input
           type="checkbox"
@@ -46,11 +46,11 @@ function Todo({
         />
         <button onClick={() => removeTodo(id)}>Delete</button>
         <button onClick={toggleEditState}>Edit</button>
-      </div>)
+      </span>)
     }
   
     return (
-      <li style={{ textDecoration: completed ? "line-through" : "none" }}>
+      <li style={{ textDecoration: completed ? "line-through" : "" }}>
         {state ? editFormShow() : editFormHide() }
       </li>
     );
