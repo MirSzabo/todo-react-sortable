@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import AddTodo from "./AddTodo";
 import uuid from "uuid/v4";
 import arrayMove from "array-move";
-import TodoItemSortable from "./TodoItemSortable";
-import TodoListSortable from "./TodoList";
+import Todo from "./Todo";
+import TodoListSortable from "./TodoListSortable";
 
 function TodoApp() {
   const [todos, setTodos] = useState([]);
@@ -61,7 +61,7 @@ function TodoApp() {
         onSortStart={(_, event) => event.preventDefault()}
       >
         {todos.map((todo, i) => (
-            <TodoItemSortable
+            <Todo
               index={i}
               key={todo.id}
               id={todo.id}

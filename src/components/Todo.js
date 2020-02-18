@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import EditTodoForm from "./EditTodoForm";
+import { sortableElement } from "react-sortable-hoc";
 
 function Todo({
     id,
@@ -45,4 +46,4 @@ function Todo({
     );
   }
 
-  export default Todo;
+  export default sortableElement(Todo);
