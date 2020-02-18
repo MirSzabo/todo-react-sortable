@@ -8,18 +8,19 @@ function TodoForm({ addTodo }) {
   const [value, setValue] = useState(""); 
   const [deadline, setDeadline] = useState("");
 
-  const add = () => {
+  const add = (e) => {
+    e.preventDefault();
     setValue("");
     setDeadline("");
     addTodo(value, formatDate(deadline))
   }
 
   return (
-    <div>
+    <form onSubmit={add}>
       <TodoTitleForm value={value} setValue={setValue}/>
       <TodoDeadlineForm deadline={deadline} setDeadline={setDeadline}/>
-      <button onClick={add }>Add todo</button>
-    </div>
+      <input type="submit" value="Add Todo" />
+    </form>
   );
 }
 

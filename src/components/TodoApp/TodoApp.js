@@ -54,8 +54,7 @@ function TodoApp() {
 
   return (
     <div>
-      <TodoForm addTodo={addTodo}>
-      </TodoForm>
+      <TodoForm addTodo={addTodo}/>
       <TodoListSortable
         axis="y"
         onSortEnd={onSortEnd}

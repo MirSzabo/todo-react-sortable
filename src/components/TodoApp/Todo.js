@@ -15,21 +15,22 @@ function Todo({
     const [value, setValue] = useState(description);
   
     const toggleEditState = () => editState(prev => !prev);
-    const update = () => 
+    const update = (e) => 
     {
+      e.preventDefault();
       editTodo(id, value)
       toggleEditState();
     } 
 
     const editFormShow = () => {
       return (
-        <> 
+        <form onSubmit={update}> 
           <TodoTitleForm
             value={value}
             setValue={setValue}
           />
-          <button onClick={update}>Update</button>
-        </>
+          <input type="submit" value="Update" />
+        </form >
       )
     }
   
@@ -49,7 +50,7 @@ function Todo({
     }
   
     return (
-      <li style={{ textDecoration: completed ? "Line-through" : "none" }}>
+      <li style={{ textDecoration: completed ? "line-through" : "none" }}>
         {state ? editFormShow() : editFormHide() }
       </li>
     );
