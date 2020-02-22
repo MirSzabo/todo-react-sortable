@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Counter from "./components/Counter";
-import TodoApp from "./components/TodoApp";
+import TodoApp from "./components/TodoApp/TodoApp";
 
 function App() {
   return (

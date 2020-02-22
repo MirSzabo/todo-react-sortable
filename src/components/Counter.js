@@ -11,13 +11,6 @@ function Counter() {
         clearTimeout(timer)
         }); 
 });
-  if (count === 1) {
-    return (
-      <div>
-        <p>You have used {count} second on this website</p>
-      </div>
-    );
-  }
 
   return (
     <div>
